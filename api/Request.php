@@ -40,7 +40,7 @@ class Request extends Controller
         ];
 
         try {
-            $client->post(App::$param["vidiUrl"] . "/api/session/start", [
+            $client->post("http://vidi:3000/api/session/start", [
                 'headers' => array('Content-Type' => 'application/json'),
                 'json' => $input]);
             $cookieJar = $client->getConfig('cookies');
