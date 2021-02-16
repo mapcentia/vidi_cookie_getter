@@ -8,7 +8,6 @@
 
 namespace app\extensions\vidi_cookie_getter\api;
 
-use app\conf\App;
 use app\inc\Controller;
 use app\inc\Input;
 use Exception;
