@@ -8,6 +8,7 @@
 
 namespace app\extensions\vidi_cookie_getter\api;
 
+use app\conf\App;
 use app\inc\Controller;
 use app\inc\Input;
 use Exception;
@@ -39,7 +40,7 @@ class Request extends Controller
         ];
 
         try {
-            $client->post("http://vidi:3000/api/session/start", [
+            $client->post(App::$param["vidiUrl"] . "/api/session/start", [
                 'headers' => array('Content-Type' => 'application/json'),
                 'json' => $input]);
             $cookieJar = $client->getConfig('cookies');
